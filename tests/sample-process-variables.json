@@ -1,0 +1,37 @@
+{
+  "lab1-loan": {
+    "applicantRef": "APP-1001",
+    "monthlyIncome": 65000,
+    "requestedAmount": 300000,
+    "loanValidationPassed": true,
+    "creditApiResponse": {
+      "body": {
+        "status": "CLEAR",
+        "score": 740
+      }
+    },
+    "creditStatus": "CLEAR"
+  },
+  "lab2-ecommerce": {
+    "customerRef": "CUST-01",
+    "productId": "SKU-01",
+    "quantity": 2,
+    "unitPrice": 1200,
+    "orderTotal": 2400,
+    "customerCategory": "REGULAR",
+    "deliveryPreference": "STANDARD",
+    "paymentToken": "TEST_APPROVED",
+    "inventoryResponse": {
+      "body": {
+        "available": true,
+        "availableQuantity": 10
+      }
+    },
+    "paymentResponse": {
+      "body": {
+        "status": "SUCCESS",
+        "reference": "MOCK-PAY-1001"
+      }
+    }
+  }
+}

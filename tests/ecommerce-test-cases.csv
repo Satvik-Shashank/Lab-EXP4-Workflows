@@ -1,0 +1,6 @@
+case,customerRef,productId,quantity,unitPrice,customerCategory,deliveryPreference,paymentToken,expectedOutcome
+order-success,CUST-01,SKU-01,2,1200,REGULAR,STANDARD,TEST_APPROVED,Ready for fulfilment
+order-out-of-stock,CUST-02,OUT_OF_STOCK,2,1200,REGULAR,STANDARD,TEST_APPROVED,Exception review
+order-payment-declined,CUST-03,SKU-01,2,1200,REGULAR,STANDARD,TEST_DECLINED,Exception review
+order-high-value,CUST-04,SKU-01,3,10000,REGULAR,STANDARD,TEST_APPROVED,Tasklist high-value review
+order-api-failure,CUST-05,API_ERROR,1,1000,REGULAR,STANDARD,TEST_APPROVED,Connector incident then retry after changing productId

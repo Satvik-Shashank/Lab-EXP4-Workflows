@@ -1,0 +1,5 @@
+case,applicantRef,monthlyIncome,requestedAmount,expectedOutcome
+loan-approved,APP-1001,65000,300000,Approved
+loan-rejected,APP-1002,18000,150000,Rejected
+loan-manual,APP-1003,50000,700000,Manual Review
+loan-api-failure,API_ERROR,65000,300000,Connector incident then retry after changing applicantRef

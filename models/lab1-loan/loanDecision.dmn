@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_loanDecision" name="Loan Approval DMN" namespace="https://example.edu/camunda/labs" exporter="Camunda Modeler" exporterVersion="5.49.0" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.8.0">
+  <decision id="loanDecision" name="Loan Approval DMN">
+    <decisionTable id="DecisionTable_loanDecision" hitPolicy="FIRST">
+      <input id="i1" label="monthlyIncome">
+        <inputExpression id="ie1" typeRef="number">
+          <text>monthlyIncome</text>
+        </inputExpression>
+      </input>
+      <input id="i2" label="requestedAmount">
+        <inputExpression id="ie2" typeRef="number">
+          <text>requestedAmount</text>
+        </inputExpression>
+      </input>
+      <input id="i3" label="creditStatus">
+        <inputExpression id="ie3" typeRef="string">
+          <text>creditStatus</text>
+        </inputExpression>
+      </input>
+      <output id="o1" name="outcome" typeRef="string" />
+      <rule id="r1">
+        <description>Income below minimum: reject</description>
+        <inputEntry id="r1i1">
+          <text>&lt; 25000</text>
+        </inputEntry>
+        <inputEntry id="r1i2">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="r1i3">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="r1o">
+          <text>"Rejected"</text>
+        </outputEntry>
+      </rule>
+      <rule id="r2">
+        <description>Credit assessment refers: manual review</description>
+        <inputEntry id="r2i1">
+          <text>&gt;= 25000</text>
+        </inputEntry>
+        <inputEntry id="r2i2">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="r2i3">
+          <text>"REFER"</text>
+        </inputEntry>
+        <outputEntry id="r2o">
+          <text>"Manual Review"</text>
+        </outputEntry>
+      </rule>
+      <rule id="r3">
+        <description>Eligible income, amount within cap and clear credit: approve</description>
+        <inputEntry id="r3i1">
+          <text>&gt;= 25000</text>
+        </inputEntry>
+        <inputEntry id="r3i2">
+          <text>&lt;= 500000</text>
+        </inputEntry>
+        <inputEntry id="r3i3">
+          <text>"CLEAR"</text>
+        </inputEntry>
+        <outputEntry id="r3o">
+          <text>"Approved"</text>
+        </outputEntry>
+      </rule>
+      <rule id="r4">
+        <description>Remaining cases: manual review</description>
+        <inputEntry id="r4i1">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="r4i2">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="r4i3">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="r4o">
+          <text>"Manual Review"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
